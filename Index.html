@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantifiers Guide | English Grammar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Literata:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Marathi:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a472a;
+            --secondary: #2d6a4f;
+            --accent: #f4a261;
+            --light: #f8f9fa;
+            --dark: #0d1b2a;
+            --highlight: #e76f51;
+            --soft-green: #95d5b2;
+        }
+
+        body {
+            font-family: 'Literata', 'Noto Sans Devanagari', 'Noto Sans Marathi', serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(42, 157, 143, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(233, 196, 106, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: var(--light);
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hindi-title {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 2rem;
+            margin-top: 15px;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .lang-toggle button {
+            background: none;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .lang-toggle button.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-toggle button:hover {
+            background: var(--soft-green);
+        }
+
+        /* Introduction Section */
+        .intro {
+            background: white;
+            margin: 60px auto;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.08);
+            border-left: 6px solid var(--accent);
+            animation: fadeIn 0.8s ease-out 0.6s backwards;
+        }
+
+        .intro h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #495057;
+        }
+
+        .hindi-text {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px dashed var(--soft-green);
+        }
+
+        /* Quantifier Categories */
+        .category-section {
+            margin: 80px auto;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--highlight));
+            border-radius: 2px;
+        }
+
+        /* Card Grid */
+        .quantifier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .quantifier-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .quantifier-card:nth-child(1) { animation-delay: 0.1s; }
+        .quantifier-card:nth-child(2) { animation-delay: 0.2s; }
+        .quantifier-card:nth-child(3) { animation-delay: 0.3s; }
+        .quantifier-card:nth-child(4) { animation-delay: 0.4s; }
+        .quantifier-card:nth-child(5) { animation-delay: 0.5s; }
+        .quantifier-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .quantifier-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--soft-green) 0%, transparent 70%);
+            opacity: 0.3;
+            transition: all 0.4s;
+        }
+
+        .quantifier-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .quantifier-card:hover::before {
+            width: 150px;
+            height: 150px;
+            opacity: 0.5;
+        }
+
+        .word-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(26, 71, 42, 0.3);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .description {
+            margin: 15px 0;
+            font-size: 1rem;
+            color: #495057;
+            line-height: 1.7;
+        }
+
+        .usage-label {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-top: 20px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .usage-label::before {
+            content: '📌';
+            font-size: 1.2rem;
+        }
+
+        .examples {
+            margin-top: 15px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .example {
+            margin: 12px 0;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .example:hover {
+            transform: translateX(5px);
+        }
+
+        .example-en {
+            color: var(--dark);
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .example-hi {
+            color: #6c757d;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 80px auto;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.15);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .tips-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .tip-card:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .tip-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tip-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--dark);
+            color: white;
+            margin-top: 100px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .heart {
+            color: var(--highlight);
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hindi-title {
+                font-size: 1.5rem;
+            }
+
+            .intro, .tips-section {
+                padding: 30px 25px;
+            }
+
+            .quantifier-card {
+                padding: 25px;
+            }
+
+            .category-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll Animation Observer */
+        .fade-in-view {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in-view.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="active" onclick="setLanguage('all')">All | सभी | सर्व</button>
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('hi')">हिंदी</button>
+        <button onclick="setLanguage('mr')">मराठी</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Quantifiers in English</h1>
+            <p class="subtitle">Master the Art of Counting and Measuring in English Grammar</p>
+            <p class="hindi-title">अंग्रेजी व्याकरण में परिमाणवाचक शब्द</p>
+            <p class="hindi-title">इंग्रजी व्याकरणातील परिमाणवाचक शब्द</p>
+        </div>
+    </header>
+
+    <!-- Introduction -->
+    <div class="container">
+        <section class="intro">
+            <h2>What are Quantifiers?</h2>
+            <p>Quantifiers are words that tell us about the quantity or amount of something. They answer questions like "How much?" or "How many?" and help us express amounts without using exact numbers. Understanding quantifiers is essential for speaking English naturally and accurately.</p>
+            <p class="hindi-text"><strong>परिमाणवाचक शब्द क्या हैं?</strong><br>
+            परिमाणवाचक वे शब्द हैं जो हमें किसी चीज़ की मात्रा या संख्या के बारे में बताते हैं। ये "कितना?" या "कितने?" जैसे सवालों के जवाब देते हैं और हमें सटीक संख्या का उपयोग किए बिना मात्रा व्यक्त करने में मदद करते हैं। अंग्रेजी को स्वाभाविक और सही तरीके से बोलने के लिए परिमाणवाचक शब्दों को समझना बहुत ज़रूरी है।</p>
+            <p class="hindi-text"><strong>परिमाणवाचक शब्द म्हणजे काय?</strong><br>
+            परिमाणवाचक हे असे शब्द आहेत जे आपल्याला एखाद्या गोष्टीचे प्रमाण किंवा संख्या सांगतात. ते "किती?" किंवा "किती?" यासारख्या प्रश्नांची उत्तरे देतात आणि अचूक संख्या न वापरता प्रमाण व्यक्त करण्यास मदत करतात. इंग्रजी नैसर्गिक आणि अचूकपणे बोलण्यासाठी परिमाणवाचक शब्द समजून घेणे अत्यावश्यक आहे.</p>
+        </section>
+
+        <!-- Countable vs Uncountable -->
+        <section class="category-section fade-in-view">
+            <h2 class="category-title">Quantifiers for Countable Nouns</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #6c757d; margin-bottom: 30px;">
+                गिनने योग्य संज्ञाओं के लिए | मोजण्यायोग्य नामांसाठी (things you can count)
+            </p>
+            
+            <div class="quantifier-grid">
+                <div class="quantifier-card">
+                    <div class="word-badge">Many</div>
+                    <p class="description">
+                        <strong>English:</strong> Used with countable nouns to mean "a large number"<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> गिनने योग्य संज्ञाओं के साथ "बहुत सारे" के अर्थ में</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> मोजण्यायोग्य नामांसह "बरेच" या "अनेक" या अर्थाने</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I have many books.</div>
+                            <div class="example-hi">मेरे पास बहुत सारी किताबें हैं।</div>
+                            <div class="example-hi">माझ्याकडे बरीच पुस्तके आहेत.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ There are many students in the class.</div>
+                            <div class="example-hi">कक्षा में बहुत सारे विद्यार्थी हैं।</div>
+                            <div class="example-hi">वर्गात बरेच विद्यार्थी आहेत.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Few</div>
+                    <p class="description">
+                        <strong>English:</strong> A small number (negative meaning - not many)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> थोड़े, कम संख्या में (नकारात्मक अर्थ)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> थोडे, कमी संख्येत (नकारात्मक अर्थ)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Few people came to the party.</div>
+                            <div class="example-hi">पार्टी में कम लोग आए। (उम्मीद से कम)</div>
+                            <div class="example-hi">पार्टीला कमी लोक आले. (अपेक्षेपेक्षा कमी)</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I have few friends in this city.</div>
+                            <div class="example-hi">इस शहर में मेरे कुछ ही दोस्त हैं।</div>
+                            <div class="example-hi">या शहरात माझे काही मित्र आहेत.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">A Few</div>
+                    <p class="description">
+                        <strong>English:</strong> A small number (positive meaning - some)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> कुछ, थोड़े से (सकारात्मक अर्थ)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> काही, थोडे (सकारात्मक अर्थ)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I have a few ideas.</div>
+                            <div class="example-hi">मेरे पास कुछ विचार हैं।</div>
+                            <div class="example-hi">माझ्याकडे काही कल्पना आहेत.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ There are a few apples left.</div>
+                            <div class="example-hi">कुछ सेब बचे हैं।</div>
+                            <div class="example-hi">काही सफरचंद शिल्लक आहेत.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Several</div>
+                    <p class="description">
+                        <strong>English:</strong> More than two but not many<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> कई, कुछ (दो से अधिक)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> अनेक, काही (दोनपेक्षा जास्त)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I've visited several countries.</div>
+                            <div class="example-hi">मैं कई देशों में गया हूँ।</div>
+                            <div class="example-hi">मी अनेक देशांना भेट दिली आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ Several students were absent.</div>
+                            <div class="example-hi">कई छात्र अनुपस्थित थे।</div>
+                            <div class="example-hi">अनेक विद्यार्थी अनुपस्थित होते.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Uncountable Nouns -->
+        <section class="category-section fade-in-view">
+            <h2 class="category-title">Quantifiers for Uncountable Nouns</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #6c757d; margin-bottom: 30px;">
+                बिना गिने जा सकने वाली संज्ञाओं के लिए | मोजता न येणाऱ्या नामांसाठी (things you cannot count)
+            </p>
+            
+            <div class="quantifier-grid">
+                <div class="quantifier-card">
+                    <div class="word-badge">Much</div>
+                    <p class="description">
+                        <strong>English:</strong> Used with uncountable nouns to mean "a large amount"<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> बिना गिनी जा सकने वाली संज्ञाओं के साथ "बहुत" के अर्थ में</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> मोजता न येणाऱ्या नामांसह "खूप" या अर्थाने</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I don't have much time.</div>
+                            <div class="example-hi">मेरे पास ज्यादा समय नहीं है।</div>
+                            <div class="example-hi">माझ्याकडे जास्त वेळ नाही.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ How much money do you need?</div>
+                            <div class="example-hi">आपको कितने पैसे चाहिए?</div>
+                            <div class="example-hi">तुम्हाला किती पैसे हवेत?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Little</div>
+                    <p class="description">
+                        <strong>English:</strong> A small amount (negative meaning - not much)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> थोड़ी मात्रा (नकारात्मक अर्थ - बहुत कम)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> थोडे प्रमाण (नकारात्मक अर्थ - खूप कमी)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ There is little hope of success.</div>
+                            <div class="example-hi">सफलता की बहुत कम उम्मीद है।</div>
+                            <div class="example-hi">यशाची फार कमी आशा आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ We have little information about it.</div>
+                            <div class="example-hi">हमारे पास इसके बारे में बहुत कम जानकारी है।</div>
+                            <div class="example-hi">आमच्याकडे याबद्दल फार कमी माहिती आहे.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">A Little</div>
+                    <p class="description">
+                        <strong>English:</strong> A small amount (positive meaning - some)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> थोड़ी मात्रा (सकारात्मक अर्थ - कुछ)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> थोडे प्रमाण (सकारात्मक अर्थ - काही)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I need a little sugar in my tea.</div>
+                            <div class="example-hi">मुझे चाय में थोड़ी चीनी चाहिए।</div>
+                            <div class="example-hi">मला चहामध्ये थोडी साखर हवी आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ Can you give me a little advice?</div>
+                            <div class="example-hi">क्या आप मुझे थोड़ी सलाह दे सकते हैं?</div>
+                            <div class="example-hi">तुम्ही मला थोडा सल्ला देऊ शकता का?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Both Countable and Uncountable -->
+        <section class="category-section fade-in-view">
+            <h2 class="category-title">Quantifiers for Both Types</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #6c757d; margin-bottom: 30px;">
+                दोनों प्रकार की संज्ञाओं के लिए | दोन्ही प्रकारच्या नामांसाठी (for both countable and uncountable)
+            </p>
+            
+            <div class="quantifier-grid">
+                <div class="quantifier-card">
+                    <div class="word-badge">Some</div>
+                    <p class="description">
+                        <strong>English:</strong> An unspecified amount or number (used in positive sentences)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> कुछ, थोड़े (सकारात्मक वाक्यों में)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I have some books. (countable)</div>
+                            <div class="example-hi">मेरे पास कुछ किताबें हैं।</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I need some water. (uncountable)</div>
+                            <div class="example-hi">मुझे कुछ पानी चाहिए।</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Any</div>
+                    <p class="description">
+                        <strong>English:</strong> Used in negative sentences and questions<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> नकारात्मक वाक्यों और प्रश्नों में "कोई भी"</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> नकारात्मक वाक्ये आणि प्रश्नांमध्ये "कोणतेही"</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Do you have any questions?</div>
+                            <div class="example-hi">क्या आपके कोई सवाल हैं?</div>
+                            <div class="example-hi">तुम्हाला काही प्रश्न आहेत का?</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I don't have any money.</div>
+                            <div class="example-hi">मेरे पास कोई पैसे नहीं हैं।</div>
+                            <div class="example-hi">माझ्याकडे पैसे नाहीत.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">More</div>
+                    <p class="description">
+                        <strong>English:</strong> A greater amount or number<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> अधिक, और ज्यादा</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> अधिक, आणखी</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I need more time to finish.</div>
+                            <div class="example-hi">मुझे खत्म करने के लिए और समय चाहिए।</div>
+                            <div class="example-hi">मला संपवण्यासाठी अधिक वेळ हवा आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ Can I have more cookies?</div>
+                            <div class="example-hi">क्या मुझे और कुकीज़ मिल सकती हैं?</div>
+                            <div class="example-hi">मला आणखी कुकीज मिळू शकतात का?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Most</div>
+                    <p class="description">
+                        <strong>English:</strong> The greatest amount or majority<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> सबसे अधिक, अधिकतर</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> सर्वात जास्त, बहुतेक</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Most people like music.</div>
+                            <div class="example-hi">ज्यादातर लोग संगीत पसंद करते हैं।</div>
+                            <div class="example-hi">बहुतेक लोकांना संगीत आवडते.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ He spent most of his money.</div>
+                            <div class="example-hi">उसने अपने अधिकतर पैसे खर्च कर दिए।</div>
+                            <div class="example-hi">त्याने त्याचे बहुतेक पैसे खर्च केले.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">All</div>
+                    <p class="description">
+                        <strong>English:</strong> The whole quantity or every one<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> सभी, सारे, पूरा</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> सर्व, सगळे</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ All students passed the exam.</div>
+                            <div class="example-hi">सभी छात्र परीक्षा में पास हुए।</div>
+                            <div class="example-hi">सर्व विद्यार्थी परीक्षेत उत्तीर्ण झाले.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I drank all the water.</div>
+                            <div class="example-hi">मैंने सारा पानी पी लिया।</div>
+                            <div class="example-hi">मी सर्व पाणी प्यायलो.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">No / None</div>
+                    <p class="description">
+                        <strong>English:</strong> Not any / zero amount<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> कोई नहीं, बिल्कुल नहीं</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> काहीही नाही, शून्य</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ There is no milk left.</div>
+                            <div class="example-hi">कोई दूध नहीं बचा है।</div>
+                            <div class="example-hi">दूध शिल्लक नाही.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ None of them came.</div>
+                            <div class="example-hi">उनमें से कोई नहीं आया।</div>
+                            <div class="example-hi">त्यांच्यापैकी कोणीही आले नाही.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Distributive Quantifiers -->
+        <section class="category-section fade-in-view">
+            <h2 class="category-title">Distributive Quantifiers</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #6c757d; margin-bottom: 30px;">
+                वितरणात्मक परिमाणवाचक | वितरणात्मक परिमाणवाचक (referring to individual members of a group)
+            </p>
+            
+            <div class="quantifier-grid">
+                <div class="quantifier-card">
+                    <div class="word-badge">Each</div>
+                    <p class="description">
+                        <strong>English:</strong> Every one individually (usually 2 or more things)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> प्रत्येक, हर एक (व्यक्तिगत रूप से)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> प्रत्येक, प्रत्येकजण (वैयक्तिकरित्या)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Each student has a book.</div>
+                            <div class="example-hi">प्रत्येक छात्र के पास एक किताब है।</div>
+                            <div class="example-hi">प्रत्येक विद्यार्थ्याकडे एक पुस्तक आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ Each of us received a gift.</div>
+                            <div class="example-hi">हम में से प्रत्येक को एक उपहार मिला।</div>
+                            <div class="example-hi">आपल्यापैकी प्रत्येकाला एक भेट मिळाली.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Every</div>
+                    <p class="description">
+                        <strong>English:</strong> All members of a group (3 or more things)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> हर, प्रत्येक (समूह के सभी सदस्य)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> प्रत्येक, प्रत्येकजण (गटातील सर्व सदस्य)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Every child likes chocolate.</div>
+                            <div class="example-hi">हर बच्चा चॉकलेट पसंद करता है।</div>
+                            <div class="example-hi">प्रत्येक मूल चॉकलेट आवडते.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I go to gym every day.</div>
+                            <div class="example-hi">मैं हर दिन जिम जाता हूँ।</div>
+                            <div class="example-hi">मी दररोज जिमला जातो.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Either</div>
+                    <p class="description">
+                        <strong>English:</strong> One or the other (of two things)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> दोनों में से कोई एक</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> दोघांपैकी कोणीही एक</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ You can take either road.</div>
+                            <div class="example-hi">आप कोई भी सड़क ले सकते हैं।</div>
+                            <div class="example-hi">तुम्ही कोणताही रस्ता घेऊ शकता.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ Either option is fine.</div>
+                            <div class="example-hi">दोनों में से कोई भी विकल्प ठीक है।</div>
+                            <div class="example-hi">दोन्हीपैकी कोणताही पर्याय ठीक आहे.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Neither</div>
+                    <p class="description">
+                        <strong>English:</strong> Not one and not the other (of two things)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> दोनों में से कोई नहीं</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> दोघांपैकी कोणीही नाही</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Neither answer is correct.</div>
+                            <div class="example-hi">दोनों में से कोई भी उत्तर सही नहीं है।</div>
+                            <div class="example-hi">दोन्हीपैकी कोणतेही उत्तर बरोबर नाही.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ Neither of them came.</div>
+                            <div class="example-hi">उनमें से कोई नहीं आया।</div>
+                            <div class="example-hi">त्यांच्यापैकी कोणीही आले नाही.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Both</div>
+                    <p class="description">
+                        <strong>English:</strong> The two together<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> दोनों</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> दोघे, दोन्ही</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Both students are intelligent.</div>
+                            <div class="example-hi">दोनों छात्र बुद्धिमान हैं।</div>
+                            <div class="example-hi">दोन्ही विद्यार्थी हुशार आहेत.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I like both tea and coffee.</div>
+                            <div class="example-hi">मुझे चाय और कॉफी दोनों पसंद हैं।</div>
+                            <div class="example-hi">मला चहा आणि कॉफी दोन्ही आवडतात.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demonstrative Quantifiers -->
+        <section class="category-section fade-in-view">
+            <h2 class="category-title">Demonstrative Quantifiers</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #6c757d; margin-bottom: 30px;">
+                संकेतवाचक परिमाणवाचक | सूचक परिमाणवाचक (pointing to specific things)
+            </p>
+            
+            <div class="quantifier-grid">
+                <div class="quantifier-card">
+                    <div class="word-badge">This</div>
+                    <p class="description">
+                        <strong>English:</strong> Pointing to something near (singular)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> यह (पास की वस्तु - एकवचन)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> हे (जवळची वस्तू - एकवचन)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ This book is interesting.</div>
+                            <div class="example-hi">यह किताब रोचक है।</div>
+                            <div class="example-hi">हे पुस्तक मनोरंजक आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I like this idea.</div>
+                            <div class="example-hi">मुझे यह विचार पसंद है।</div>
+                            <div class="example-hi">मला ही कल्पना आवडते.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">That</div>
+                    <p class="description">
+                        <strong>English:</strong> Pointing to something far (singular)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> वह (दूर की वस्तु - एकवचन)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> ती (दूरची वस्तू - एकवचन)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ That car is expensive.</div>
+                            <div class="example-hi">वह कार महंगी है।</div>
+                            <div class="example-hi">ती गाडी महाग आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I remember that day.</div>
+                            <div class="example-hi">मुझे वह दिन याद है।</div>
+                            <div class="example-hi">मला तो दिवस आठवतो.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">These</div>
+                    <p class="description">
+                        <strong>English:</strong> Pointing to things near (plural)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> ये (पास की वस्तुएँ - बहुवचन)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> ह्या (जवळच्या वस्तू - अनेकवचन)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ These flowers are beautiful.</div>
+                            <div class="example-hi">ये फूल सुंदर हैं।</div>
+                            <div class="example-hi">ही फुले सुंदर आहेत.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I want these shoes.</div>
+                            <div class="example-hi">मुझे ये जूते चाहिए।</div>
+                            <div class="example-hi">मला हे बूट हवेत.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Those</div>
+                    <p class="description">
+                        <strong>English:</strong> Pointing to things far (plural)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> वे (दूर की वस्तुएँ - बहुवचन)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> त्या (दूरच्या वस्तू - अनेकवचन)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Those mountains are tall.</div>
+                            <div class="example-hi">वे पहाड़ ऊँचे हैं।</div>
+                            <div class="example-hi">ते डोंगर उंच आहेत.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ Do you remember those days?</div>
+                            <div class="example-hi">क्या आपको वे दिन याद हैं?</div>
+                            <div class="example-hi">तुम्हाला ते दिवस आठवतात का?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Quantifiers -->
+        <section class="category-section fade-in-view">
+            <h2 class="category-title">Additional Important Quantifiers</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #6c757d; margin-bottom: 30px;">
+                अन्य महत्वपूर्ण परिमाणवाचक शब्द | इतर महत्त्वाचे परिमाणवाचक शब्द
+            </p>
+            
+            <div class="quantifier-grid">
+                <div class="quantifier-card">
+                    <div class="word-badge">Enough</div>
+                    <p class="description">
+                        <strong>English:</strong> As much as needed<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> पर्याप्त, काफी</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> पुरेसे, पुरे</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I have enough money.</div>
+                            <div class="example-hi">मेरे पास पर्याप्त पैसे हैं।</div>
+                            <div class="example-hi">माझ्याकडे पुरेसे पैसे आहेत.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ Is there enough time?</div>
+                            <div class="example-hi">क्या पर्याप्त समय है?</div>
+                            <div class="example-hi">पुरेसा वेळ आहे का?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Plenty of</div>
+                    <p class="description">
+                        <strong>English:</strong> More than enough<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> बहुत सारा, काफी ज्यादा</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> भरपूर, पुष्कळ</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ There is plenty of food.</div>
+                            <div class="example-hi">बहुत सारा खाना है।</div>
+                            <div class="example-hi">भरपूर अन्न आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ We have plenty of time.</div>
+                            <div class="example-hi">हमारे पास काफी समय है।</div>
+                            <div class="example-hi">आमच्याकडे भरपूर वेळ आहे.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">A lot of</div>
+                    <p class="description">
+                        <strong>English:</strong> A large amount or number (informal)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> बहुत सारा, बहुत</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> खूप, भरपूर</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I have a lot of work.</div>
+                            <div class="example-hi">मेरे पास बहुत काम है।</div>
+                            <div class="example-hi">माझ्याकडे खूप काम आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ She has a lot of friends.</div>
+                            <div class="example-hi">उसके बहुत सारे दोस्त हैं।</div>
+                            <div class="example-hi">तिच्याकडे खूप मित्र आहेत.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Less</div>
+                    <p class="description">
+                        <strong>English:</strong> A smaller amount (for uncountable)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> कम (बिना गिनी जाने वाली वस्तुओं के लिए)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> कमी (मोजता न येणाऱ्या वस्तूंसाठी)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ I need less sugar.</div>
+                            <div class="example-hi">मुझे कम चीनी चाहिए।</div>
+                            <div class="example-hi">मला कमी साखर हवी आहे.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ There is less traffic today.</div>
+                            <div class="example-hi">आज कम ट्रैफिक है।</div>
+                            <div class="example-hi">आज कमी रहदारी आहे.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quantifier-card">
+                    <div class="word-badge">Fewer</div>
+                    <p class="description">
+                        <strong>English:</strong> A smaller number (for countable)<br>
+                        <span class="hindi-text"><strong>हिंदी:</strong> कम संख्या में (गिनी जाने वाली वस्तुओं के लिए)</span><br>
+                        <span class="hindi-text"><strong>मराठी:</strong> कमी संख्येत (मोजण्यायोग्य वस्तूंसाठी)</span>
+                    </p>
+                    <p class="usage-label">Usage / प्रयोग / वापर:</p>
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-en">✓ Fewer people attended this year.</div>
+                            <div class="example-hi">इस वर्ष कम लोग आए।</div>
+                            <div class="example-hi">या वर्षी कमी लोक उपस्थित होते.</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-en">✓ I made fewer mistakes.</div>
+                            <div class="example-hi">मैंने कम गलतियाँ कीं।</div>
+                            <div class="example-hi">मी कमी चुका केल्या.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="tips-section fade-in-view">
+            <div class="container">
+                <h2>Quick Tips to Remember</h2>
+                <p class="hindi-text" style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">याद रखने के लिए आसान टिप्स</p>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🔢</div>
+                        <h3>Countable vs Uncountable</h3>
+                        <p><strong>Many</strong> and <strong>Few</strong> → Countable (things you can count)</p>
+                        <p><strong>Much</strong> and <strong>Little</strong> → Uncountable (things you cannot count)</p>
+                        <p class="hindi-text"><strong>याद रखें:</strong> Many/Few गिनने योग्य, Much/Little बिना गिनी जाने वाली<br><strong>लक्षात ठेवा:</strong> Many/Few मोजण्यायोग्य, Much/Little मोजता न येणारे</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">➕</div>
+                        <h3>Positive vs Negative</h3>
+                        <p><strong>A few / A little</strong> → Positive (some, enough)</p>
+                        <p><strong>Few / Little</strong> → Negative (not enough, insufficient)</p>
+                        <p class="hindi-text"><strong>याद रखें:</strong> "A" के साथ सकारात्मक, बिना "A" के नकारात्मक<br><strong>लक्षात ठेवा:</strong> "A" सह सकारात्मक, "A" शिवाय नकारात्मक</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">❓</div>
+                        <h3>Some vs Any</h3>
+                        <p><strong>Some</strong> → Positive sentences and offers</p>
+                        <p><strong>Any</strong> → Questions and negative sentences</p>
+                        <p class="hindi-text"><strong>याद रखें:</strong> Some सकारात्मक में, Any प्रश्नों और नकारात्मक में<br><strong>लक्षात ठेवा:</strong> Some सकारात्मक मध्ये, Any प्रश्न आणि नकारात्मक मध्ये</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">👥</div>
+                        <h3>Each vs Every</h3>
+                        <p><strong>Each</strong> → 2 or more (individual focus)</p>
+                        <p><strong>Every</strong> → 3 or more (group focus)</p>
+                        <p class="hindi-text"><strong>याद रखें:</strong> Each व्यक्तिगत पर जोर, Every समूह पर जोर<br><strong>लक्षात ठेवा:</strong> Each वैयक्तिकतेवर भर, Every गटावर भर</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">📍</div>
+                        <h3>This/That Distance</h3>
+                        <p><strong>This/These</strong> → Near (यह/ये - पास)</p>
+                        <p><strong>That/Those</strong> → Far (वह/वे - दूर)</p>
+                        <p class="hindi-text"><strong>याद रखें:</strong> दूरी के आधार पर प्रयोग करें<br><strong>लक्षात ठेवा:</strong> अंतराच्या आधारावर वापरा</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">⚖️</div>
+                        <h3>Less vs Fewer</h3>
+                        <p><strong>Less</strong> → Uncountable nouns</p>
+                        <p><strong>Fewer</strong> → Countable nouns</p>
+                        <p class="hindi-text"><strong>याद रखें:</strong> Less बिना गिनी जाने वाली के लिए, Fewer गिनी जाने वाली के लिए<br><strong>लक्षात ठेवा:</strong> Less मोजता न येणाऱ्यासाठी, Fewer मोजण्यायोग्यासाठी</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section class="intro fade-in-view" style="background: linear-gradient(135deg, #fff5e6 0%, #ffe0b3 100%);">
+            <h2 style="color: var(--secondary);">💡 Practice Makes Perfect</h2>
+            <p>
+                <strong>English:</strong> The best way to master quantifiers is to use them in daily conversation. Start by noticing them when you read or listen to English. Then, try to use them when you speak or write. Don't worry about making mistakes – they're part of learning!
+            </p>
+            <p class="hindi-text">
+                <strong>हिंदी:</strong> परिमाणवाचक शब्दों में महारत हासिल करने का सबसे अच्छा तरीका है इन्हें रोज़मर्रा की बातचीत में उपयोग करना।<br>
+                <strong>मराठी:</strong> परिमाणवाचक शब्दांवर प्रभुत्व मिळवण्याचा सर्वोत्तम मार्ग म्हणजे त्यांचा दररोजच्या संभाषणात वापर करणे. जब आप अंग्रेज़ी पढ़ें या सुनें तो इन्हें पहचानना शुरू करें। फिर, जब आप बोलें या लिखें तो इनका उपयोग करने की कोशिश करें। गलतियाँ करने की चिंता न करें – वे सीखने का हिस्सा हैं!
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with <span class="heart">❤️</span> for English Learners</p>
+        <p class="hindi-text">अंग्रेजी सीखने वालों के लिए प्यार से बनाया गया<br>इंग्रजी शिकणाऱ्यांसाठी प्रेमाने तयार केले</p>
+        <p style="margin-top: 15px; opacity: 0.8;">Keep practicing and you'll master quantifiers! | अभ्यास करते रहें और आप महारत हासिल कर लेंगे! | सराव करत राहा आणि तुम्ही प्रभुत्व मिळवाल!</p>
+    </footer>
+
+    <script>
+        // Language Toggle Functionality
+        function setLanguage(lang) {
+            const buttons = document.querySelectorAll('.lang-toggle button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const hindiElements = document.querySelectorAll('.hindi-text, .example-hi');
+            const englishElements = document.querySelectorAll('.description, .example-en');
+
+            if (lang === 'hi') {
+                // Hindi only
+                hindiElements.forEach(el => {
+                    // Show Hindi text but hide Marathi parts
+                    if (el.textContent.includes('मराठी')) {
+                        el.style.display = 'none';
+                    } else {
+                        el.style.display = 'block';
+                    }
+                });
+                englishElements.forEach(el => el.style.display = 'none');
+            } else if (lang === 'mr') {
+                // Marathi only
+                hindiElements.forEach(el => {
+                    // Show only Marathi text
+                    if (el.textContent.includes('मराठी') || el.classList.contains('example-hi') && !el.textContent.includes('हैं') && !el.textContent.includes('है')) {
+                        el.style.display = 'block';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                englishElements.forEach(el => el.style.display = 'none');
+            } else if (lang === 'en') {
+                // English only
+                hindiElements.forEach(el => el.style.display = 'none');
+                englishElements.forEach(el => el.style.display = 'block');
+            } else {
+                // All languages
+                hindiElements.forEach(el => el.style.display = 'block');
+                englishElements.forEach(el => el.style.display = 'block');
+            }
+        }
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-view').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
